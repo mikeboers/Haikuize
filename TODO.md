@@ -22,3 +22,23 @@
 	- find all 5 and 7 syllable sections and remember the word or two (up to 5 or
 	  7 syllables) that lead into or out of that section, and then align the
 	  sections
+
+- write a Reddit and/or Twitter bot
+	- scan new tweets or comments searching for posts which are haikus
+		- look for existing bots that already do this
+			- see: https://github.com/larryng/reddit-iama-bot
+			- see: https://gist.github.com/e17ba08727519dcc3f0c
+			- see: https://gist.github.com/e796b65bf9d657cc6f3d
+		- connect to the twitter public sample stream to look at
+	- only post replies for those that do not match a normalized format
+		- lowercase
+		- no punctuation
+		- don't convert numbers
+		- single spaces bettween words
+		- single newlines bettween lines
+	- post a link to example.com/reddit/$ID
+		- have feedback machanisms for determining if this is a good haiku
+		- http://haikuize.com/
+		- http://haikuresearch.com/
+	- present this as a research tool for developing scoring functions for
+	  evaluating quality of haikus
