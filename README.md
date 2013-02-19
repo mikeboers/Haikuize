@@ -9,6 +9,9 @@ A Python toolkit for extracting Haikus from existing text sources. Currently onl
 
 Uses the [CMU Pronouncing Dictionary](http://www.speech.cs.cmu.edu/cgi-bin/cmudict) to determine syllable counts.
 
+
+## Installation and Usage
+
 First, you must download and preprocess the CMU dictionary:
 
     python prepare_corpus.py
@@ -18,3 +21,6 @@ Basic usage:
     python haikuize.py < input_corpus.txt
 
 
+## Disclaimer
+
+This library is currently quite unsuitable for usage in another project, as it does not expose any useful API; it only functions as a command to filter input text into a stream of potential haikus.
