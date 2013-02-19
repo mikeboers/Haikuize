@@ -32,8 +32,8 @@ def isolate_syllable_count(count, words, start=0):
     total = 0
     for i in xrange(start, len(words)):
         
-        word, n = words[i]
-        total += n
+        word = words[i]
+        total += syllable_count(word)
 
         if total == count:
             return i + 1
@@ -92,7 +92,7 @@ if __name__ == '__main__':
             if not n:
                 words = []
                 continue
-            words.append((word, n))
+            words.append(word)
         
         while opts.match_end and word:
             word = next(corpus)
@@ -102,9 +102,9 @@ if __name__ == '__main__':
         c = b and isolate_syllable_count(5, words, b)
         
         if c:
-            print ' '.join(x[0] for x in words[0:a]).title()
-            print ' '.join(x[0] for x in words[a:b]).title()
-            print ' '.join(x[0] for x in words[b:c]).title()
+            print ' '.join(x for x in words[0:a]).title()
+            print ' '.join(x for x in words[a:b]).title()
+            print ' '.join(x for x in words[b:c]).title()
             print
         
         if opts.match_start:
