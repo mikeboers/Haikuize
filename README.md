@@ -12,13 +12,17 @@ Uses the [CMU Pronouncing Dictionary](http://www.speech.cs.cmu.edu/cgi-bin/cmudi
 
 ## Installation and Usage
 
-First, you must download and preprocess the CMU dictionary:
+From a terminal:
 
+    # Clone the repo.
+    git clone git://github.com/mikeboers/Haikuize.git
+    cd Haikuize
+
+    # Download and preprocess CMU dictionary.
     python prepare_corpus.py
 
-Basic usage:
-
-    python haikuize.py < input_corpus.txt
+    # Filter your text.
+    python haikuize.py < /path/to/your/text.txt
 
 
 ## Disclaimer
