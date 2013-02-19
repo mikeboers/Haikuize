@@ -3,9 +3,8 @@ import sys
 import re
 from optparse import OptionParser
 
-import nltk.corpus
 
-cmudict = nltk.corpus.cmudict.dict() 
+_syllable_counts = {}
 
 
 def syllable_count(word):
@@ -15,10 +14,12 @@ def syllable_count(word):
 
     """
 
-    key = cmudict.get(word.lower())
-    if not key:
-        return
-    return len([1 for x in key[0] if x[-1].isdigit()])
+    if not _syllable_counts:
+        for line in open('syllable_counts.txt'):
+            word, count = line.strip().split()
+            _syllable_counts[word] = int(count)
+
+    return _syllable_counts.get(word.upper())
 
 
 def isolate_syllable_count(count, words, start=0):
@@ -30,12 +31,16 @@ def isolate_syllable_count(count, words, start=0):
 
     total = 0
     for i in xrange(start, len(words)):
+        
         word, n = words[i]
         total += n
+
         if total == count:
             return i + 1
+
         if total > count:
             return False
+
     return False
 
 
