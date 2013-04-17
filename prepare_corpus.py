@@ -1,7 +1,8 @@
 import sys
 import urllib
 
-url = 'https://cmusphinx.svn.sourceforge.net/svnroot/cmusphinx/trunk/cmudict/cmudict.0.7a'
+# Grabbed this URL from  http://www.speech.cs.cmu.edu/cgi-bin/cmudict
+url = 'http://svn.code.sf.net/p/cmusphinx/code/trunk/cmudict/cmudict.0.7a'
 
 if len(sys.argv) > 1:
     path = sys.argv[1]
